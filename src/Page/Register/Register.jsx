@@ -2,14 +2,31 @@ import React from "react";
 import { Link } from "react-router";
 
 const Register = () => {
+  const handelRegister = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    console.log(name, email, password);
+  };
+
   return (
     <div className="card bg-base-100 w-full mx-auto mt-14 max-w-sm shrink-0 shadow-2xl">
       <h1 className="text-4xl text-center font-bold">Register now!</h1>
       <div className="card-body">
-        <form className="fieldset">
+        <form onSubmit={handelRegister} className="fieldset">
+          <label className="label">Name</label>
+          <input
+            type="text"
+            name="name"
+            autoComplete="name"
+            className="input"
+            placeholder="Name"
+          />
           <label className="label">Email</label>
           <input
             type="email"
+            name="email"
             autoComplete="email"
             className="input"
             placeholder="Email"
@@ -17,6 +34,7 @@ const Register = () => {
           <label className="label">Password</label>
           <input
             type="password"
+            name="password"
             autoComplete="current-password"
             className="input"
             placeholder="Password"
