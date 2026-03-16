@@ -1,4 +1,4 @@
-import { StrictMode } from "react";
+import { createContext, StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
@@ -8,6 +8,11 @@ import Root from "./Page/Root/Root.jsx";
 import Home from "./Page/Home/Home.jsx";
 import Login from "./Page/Login/Login.jsx";
 import Register from "./Page/Register/Register.jsx";
+
+export const AuthContext = createContext(null);
+const userInfo = {
+  email: "sohag@roy.com",
+};
 
 const router = createBrowserRouter([
   {
@@ -32,6 +37,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <AuthContext value={userInfo}>
+      <RouterProvider router={router}></RouterProvider>
+    </AuthContext>
   </StrictMode>,
 );
