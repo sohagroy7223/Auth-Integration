@@ -1,28 +1,41 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import React, { useState } from "react";
+// import { createUserWithEmailAndPassword } from "firebase/auth";
+// import React, { useState } from "react";
+import { use } from "react";
 import { Link } from "react-router";
-import { auth } from "../../Firebase/Firebase.init";
+import { AuthContext } from "../../Context/AuthContext";
+
+// import { auth } from "../../Firebase/Firebase.init";
 
 const Register = () => {
-  const [errorMassage, setErrorMassage] = useState("");
-  const [success, setSuccess] = useState(false);
+  const { createUser } = use(AuthContext);
+
+  // const [errorMassage, setErrorMassage] = useState("");
+  // const [success, setSuccess] = useState(false);
 
   const handelRegister = (e) => {
     e.preventDefault();
-    const name = e.target.name.value;
+    // const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(name, email, password);
+    // console.log(name, email, password);
 
-    createUserWithEmailAndPassword(auth, email, password)
+    createUser(email, password)
       .then((result) => {
         console.log(result);
-        setSuccess(true);
       })
       .catch((error) => {
         console.log(error);
-        setErrorMassage(error.message);
       });
+
+    // createUserWithEmailAndPassword(auth, email, password)
+    //   .then((result) => {
+    //     console.log(result);
+    //     setSuccess(true);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //     setErrorMassage(error.message);
+    //   });
   };
 
   return (
@@ -66,12 +79,12 @@ const Register = () => {
           </Link>
         </p>
       </div>
-      {errorMassage && (
+      {/* {errorMassage && (
         <p className="text-red-600 text-center">{errorMassage}</p>
       )}
       {success && (
         <p className="text-green-600 text-center">User Register successfully</p>
-      )}
+      )} */}
     </div>
   );
 };

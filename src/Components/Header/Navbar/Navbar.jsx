@@ -3,9 +3,14 @@ import "./Navbar.css";
 import { use } from "react";
 import { AuthContext } from "../../../Context/AuthContext";
 
+// import { AuthContext } from "../../../Context/AuthContext";
+
 const Navbar = () => {
+  // const { createUser } = use(AuthContext);
+  // console.log(createUser);
   const userInfo = use(AuthContext);
   console.log(userInfo);
+
   const links = (
     <>
       <li>
