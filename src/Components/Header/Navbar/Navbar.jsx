@@ -8,8 +8,8 @@ import { AuthContext } from "../../../Context/AuthContext";
 const Navbar = () => {
   // const { createUser } = use(AuthContext);
   // console.log(createUser);
-  const userInfo = use(AuthContext);
-  console.log(userInfo);
+  const { user } = use(AuthContext);
+  console.log(user);
 
   const links = (
     <>
