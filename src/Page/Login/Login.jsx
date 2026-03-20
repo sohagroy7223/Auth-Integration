@@ -1,9 +1,18 @@
-import React from "react";
+import React, { use } from "react";
 import { Link } from "react-router";
+import { AuthContext } from "../../Context/AuthContext";
 
 const Login = () => {
+  const { signInUser } = use(AuthContext);
+
   const handelLogin = (e) => {
     e.preventDefault();
+
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    console.log(email, password);
+
+    signInUser(email, password);
   };
 
   return (
@@ -14,6 +23,7 @@ const Login = () => {
           <label className="label">Email</label>
           <input
             type="email"
+            name="email"
             autoComplete="email"
             className="input"
             placeholder="Email"
@@ -21,6 +31,7 @@ const Login = () => {
           <label className="label">Password</label>
           <input
             type="password"
+            name="password"
             autoComplete="current-password"
             className="input"
             placeholder="Password"
