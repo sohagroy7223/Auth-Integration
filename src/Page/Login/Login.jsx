@@ -12,7 +12,13 @@ const Login = () => {
     const password = e.target.password.value;
     console.log(email, password);
 
-    signInUser(email, password);
+    signInUser(email, password)
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (

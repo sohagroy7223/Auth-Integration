@@ -1,5 +1,5 @@
 // import { createUserWithEmailAndPassword } from "firebase/auth";
-// import React, { useState } from "react";
+import React, { useState } from "react";
 import { use } from "react";
 import { Link } from "react-router";
 import { AuthContext } from "../../Context/AuthContext";
@@ -9,8 +9,8 @@ import { AuthContext } from "../../Context/AuthContext";
 const Register = () => {
   const { createUser } = use(AuthContext);
 
-  // const [errorMassage, setErrorMassage] = useState("");
-  // const [success, setSuccess] = useState(false);
+  const [errorMassage, setErrorMassage] = useState("");
+  const [success, setSuccess] = useState(false);
 
   const handelRegister = (e) => {
     e.preventDefault();
@@ -22,9 +22,11 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         console.log(result);
+        setSuccess(true);
       })
       .catch((error) => {
         console.log(error);
+        setErrorMassage(error.message);
       });
 
     // createUserWithEmailAndPassword(auth, email, password)
@@ -79,12 +81,12 @@ const Register = () => {
           </Link>
         </p>
       </div>
-      {/* {errorMassage && (
+      {errorMassage && (
         <p className="text-red-600 text-center">{errorMassage}</p>
       )}
       {success && (
         <p className="text-green-600 text-center">User Register successfully</p>
-      )} */}
+      )}
     </div>
   );
 };
