@@ -32,6 +32,16 @@ const Navbar = () => {
       <li>
         <NavLink to="/register">Register</NavLink>
       </li>
+      {user && (
+        <>
+          <li>
+            <NavLink to="/orders">Order</NavLink>
+          </li>
+          <li>
+            <NavLink to="/profile">Profile</NavLink>
+          </li>
+        </>
+      )}
     </>
   );
 
@@ -70,9 +80,12 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         {user ? (
-          <a onClick={handelSignOut} className="btn">
-            Log Out
-          </a>
+          <>
+            {user.email}
+            <a onClick={handelSignOut} className="btn">
+              Log Out
+            </a>
+          </>
         ) : (
           <Link className="btn" to="/login">
             Login
