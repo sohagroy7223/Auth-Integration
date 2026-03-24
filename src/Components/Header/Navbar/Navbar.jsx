@@ -2,9 +2,6 @@ import { Link, NavLink } from "react-router";
 import "./Navbar.css";
 import { use } from "react";
 import { AuthContext } from "../../../Context/AuthContext";
-// import logo from "../../../assets/images.png";
-
-// import { AuthContext } from "../../../Context/AuthContext";
 
 const Navbar = () => {
   // const { createUser } = use(AuthContext);
@@ -78,7 +75,7 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex="-1"
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3  p-2 shadow"
+            className="menu menu-sm dropdown-content bg-green-100 text-black duration-700 rounded-box z-1 mt-3  p-2 shadow"
           >
             {links}
           </ul>
@@ -87,7 +84,7 @@ const Navbar = () => {
       <div className="flex justify-start w-full ml-10">
         <ul className="space-x-5 w-full">
           <Link
-            className="hover:underline bg-white text-black  rounded-2xl p-1"
+            className="hover:underline bg-white text-black  rounded-xl p-1"
             to="/"
           >
             Rufus
