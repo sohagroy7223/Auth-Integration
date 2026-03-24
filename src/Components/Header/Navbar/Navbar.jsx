@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router";
 import "./Navbar.css";
 import { use } from "react";
 import { AuthContext } from "../../../Context/AuthContext";
+// import logo from "../../../assets/images.png";
 
 // import { AuthContext } from "../../../Context/AuthContext";
 
@@ -55,9 +56,9 @@ const Navbar = () => {
 
   return (
     <div className="navbar bg-gray-700 shadow-sm">
-      <div className="navbar-start">
+      <div className="">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <div tabIndex={0} role="button" className="btn btn-ghost ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -73,18 +74,43 @@ const Navbar = () => {
                 d="M4 6h16M4 12h8m-8 6h16"
               />{" "}
             </svg>
+            <h3 className="font-bold">All</h3>
           </div>
           <ul
             tabIndex="-1"
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3  p-2 shadow"
           >
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
       </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{links}</ul>
+      <div className="flex justify-start w-full ml-10">
+        <ul className="space-x-5 w-full">
+          <Link
+            className="hover:underline bg-white text-black  rounded-2xl p-1"
+            to="/"
+          >
+            Rufus
+          </Link>
+          <Link className="hover:underline " to="/">
+            Today's deals
+          </Link>
+          <Link className="hover:underline " to="/">
+            Prime Video
+          </Link>
+          <Link className="hover:underline " to="/">
+            Buy Again
+          </Link>
+          <Link className="hover:underline " to="/">
+            Customer Service
+          </Link>
+          <Link className="hover:underline " to="/">
+            Registry
+          </Link>
+          <Link className="hover:underline " to="/">
+            Gift Cards
+          </Link>
+        </ul>
       </div>
       <div className="navbar-end">
         {user ? (
