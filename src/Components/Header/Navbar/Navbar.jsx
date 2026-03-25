@@ -81,32 +81,47 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-      <div className="flex justify-start w-full ml-10">
-        <ul className="space-x-5 w-full">
-          <Link
-            className="hover:underline bg-white text-black  rounded-xl p-1"
-            to="/"
-          >
-            Rufus
-          </Link>
-          <Link className="hover:underline " to="/">
-            Today's deals
-          </Link>
-          <Link className="hover:underline " to="/">
-            Prime Video
-          </Link>
-          <Link className="hover:underline " to="/">
-            Buy Again
-          </Link>
-          <Link className="hover:underline " to="/">
-            Customer Service
-          </Link>
-          <Link className="hover:underline " to="/">
-            Registry
-          </Link>
-          <Link className="hover:underline " to="/">
-            Gift Cards
-          </Link>
+      <div className="flex justify-start overflow-hidden w-full ml-10">
+        <ul className="space-x-5 flex overflow-x-scroll no-scroll items-center flex-nowrap">
+          <li>
+            <Link
+              className="hover:underline bg-white text-black  rounded-xl p-1"
+              to="/"
+            >
+              Rufus
+            </Link>
+          </li>
+          <li>
+            <Link className="hover:underline " to="/">
+              Today's deals
+            </Link>
+          </li>
+          <li>
+            <Link className="hover:underline " to="/">
+              Prime Video
+            </Link>
+          </li>
+          <li>
+            <Link className="hover:underline " to="/">
+              Buy Again
+            </Link>
+          </li>
+          <li>
+            {" "}
+            <Link className="hover:underline " to="/">
+              Customer Service
+            </Link>
+          </li>
+          <li>
+            <Link className="hover:underline " to="/">
+              Registry
+            </Link>
+          </li>
+          <li>
+            <Link className="hover:underline " to="/">
+              Gift Cards
+            </Link>
+          </li>
         </ul>
       </div>
       <div className="navbar-end">
