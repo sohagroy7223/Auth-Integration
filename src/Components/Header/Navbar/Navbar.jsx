@@ -82,8 +82,8 @@ const Navbar = () => {
         </div>
       </div>
       <div className="flex justify-start overflow-hidden w-full ml-10">
-        <ul className="space-x-5 flex overflow-x-scroll no-scroll items-center flex-nowrap">
-          <li>
+        <ul className="space-x-5 flex flex-row overflow-x-auto md:overflow-hidden items-center flex-nowrap">
+          <li className="shrink-0">
             <Link
               className="hover:underline bg-white text-black  rounded-xl p-1"
               to="/"
@@ -91,33 +91,33 @@ const Navbar = () => {
               Rufus
             </Link>
           </li>
-          <li>
+          <li className="shrink-0">
             <Link className="hover:underline " to="/">
               Today's deals
             </Link>
           </li>
-          <li>
+          <li className="shrink-0">
             <Link className="hover:underline " to="/">
               Prime Video
             </Link>
           </li>
-          <li>
+          <li className="shrink-0">
             <Link className="hover:underline " to="/">
               Buy Again
             </Link>
           </li>
-          <li>
+          <li className="shrink-0">
             {" "}
             <Link className="hover:underline " to="/">
               Customer Service
             </Link>
           </li>
-          <li>
+          <li className="shrink-0">
             <Link className="hover:underline " to="/">
               Registry
             </Link>
           </li>
-          <li>
+          <li className="shrink-0">
             <Link className="hover:underline " to="/">
               Gift Cards
             </Link>
